@@ -36,7 +36,7 @@ resource "aws_iam_policy" "lambda_policy" {
           "route53:ListResourceRecordSets",
           "route53:ChangeResourceRecordSets"
         ],
-        Resource = "arn:aws:route53:::hostedzone/Z1CJQNRAHT4HHI"
+        Resource = "arn:aws:route53:::hostedzone/Z1CJQNRurgk"
       },
       {
         Effect = "Allow",
@@ -85,8 +85,8 @@ resource "aws_lambda_function" "route53_handler" {
   filename = "lambda.zip"
   environment {
     variables = {
-      HOSTED_ZONE_ID = "Z1CJQNRAHT4HHI"
-      RECORD_NAME    = "cognitran-elasticsearch5-prod.-cloud.com"
+      HOSTED_ZONE_ID = "Z1CJQNRurgk"
+      RECORD_NAME    = "elasticsearch-prod.-cloud.com"
     }
   }
 }
@@ -223,8 +223,8 @@ resource "aws_lambda_function" "route53_handler" {
   filename = "lambda.zip"
   environment {
     variables = {
-      HOSTED_ZONE_ID = "Z1CJQNRAHT4HHI"
-      RECORD_NAME    = "cognitran-elasticsearch5-prod.-cloud.com"
+      HOSTED_ZONE_ID = "Z1CJQNRurgk"
+      RECORD_NAME    = "elasticsearch-prod.-cloud.com"
     }
   }
 }
